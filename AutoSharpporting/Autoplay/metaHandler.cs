@@ -37,12 +37,12 @@ namespace Support
             "Ryze", "Shaco", "Singed", "Sona", "Soraka", "Swain", "Syndra", "Teemo", "Thresh", "TwistedFate", "veigar", "VelKoz",
             "Viktor", "Vladimir", "Xerath", "XinZhao", "Yorick", "Ziggs", "Zilean", "Zyra"
         };
-        //1:AD, 2:AP
+        //1:AD, 2:,3:,4:5:Suport,6:
         static readonly ItemId[] SRShopList = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
         static readonly ItemId[] TTShopList = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
         static readonly ItemId[] ARAMShopListAP = { ItemId.Zhonyas_Hourglass, ItemId.Rabadons_Deathcap, ItemId.Rod_of_Ages, ItemId.Rylais_Crystal_Scepter, ItemId.Will_of_the_Ancients, ItemId.Zekes_Herald, ItemId.Locket_of_the_Iron_Solari, ItemId.Void_Staff, ItemId.Hextech_Sweeper, ItemId.Iceborn_Gauntlet, ItemId.Abyssal_Scepter, ItemId.Sorcerers_Shoes };
         static readonly ItemId[] ARAMShopListAD = { ItemId.Blade_of_the_Ruined_King, ItemId.Infinity_Edge, ItemId.Phantom_Dancer, ItemId.Sanguine_Blade, ItemId.Mercurial_Scimitar, ItemId.Zephyr, ItemId.Maw_of_Malmortius, ItemId.Statikk_Shiv, ItemId.Berserkers_Greaves };
-        static readonly ItemId[] CrystalScar = { ItemId.Rod_of_Ages_Crystal_Scar, ItemId.Wooglets_Witchcap, ItemId.Void_Staff, ItemId.Athenes_Unholy_Grail, ItemId.Abyssal_Scepter, ItemId.Liandrys_Torment, ItemId.Morellonomicon, ItemId.Rylais_Crystal_Scepter, ItemId.Sorcerers_Shoes };
+        static readonly ItemId[] CrystalScar = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
         static readonly ItemId[] Other = { };
         static int LastShopAttempt;
 
