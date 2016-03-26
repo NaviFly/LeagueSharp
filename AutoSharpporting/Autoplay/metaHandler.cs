@@ -43,7 +43,7 @@ namespace Support
         static readonly ItemId[] ARAMShopListAP = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
         static readonly ItemId[] ARAMShopListAD = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
         static readonly ItemId[] CrystalScar = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
-        static readonly ItemId[] Other = { };
+        static readonly ItemId[] Other = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
         static int LastShopAttempt;
 
         public static void DoChecks()
