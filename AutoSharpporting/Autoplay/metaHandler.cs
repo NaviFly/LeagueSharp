@@ -26,7 +26,7 @@ namespace Support
         public static List<Obj_AI_Hero> AllHeroes;
         public static List<Obj_AI_Hero> AllyHeroes;
         public static List<Obj_AI_Hero> EnemyHeroes;
-        public static string[] Supports = {};
+        public static string[] Supports = { "Alistar", "Annie", "Blitzcrank", "Braum", "Fiddlesticks", "Janna", "Karma", "Kayle", "Leona", "Lulu", "Morgana", "Nunu", "Nami", "Soraka", "Sona", "Taric", "Thresh", "Zilean", "Zyra" };
         public static string[] AP =
         {
             "Ahri", "Akali", "Alistar", "Amumu", "Anivia", "Annie", "Azir", "Blitzcrank",
@@ -37,13 +37,12 @@ namespace Support
             "Ryze", "Shaco", "Singed", "Sona", "Soraka", "Swain", "Syndra", "Teemo", "Thresh", "TwistedFate", "veigar", "VelKoz",
             "Viktor", "Vladimir", "Xerath", "XinZhao", "Yorick", "Ziggs", "Zilean", "Zyra"
         };
-        //1:AD, 2:,3:,4:5:Suport,6:
-        static readonly ItemId[] SRShopList = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
-        static readonly ItemId[] TTShopList = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
-        static readonly ItemId[] ARAMShopListAP = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
-        static readonly ItemId[] ARAMShopListAD = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
-        static readonly ItemId[] CrystalScar = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
-        static readonly ItemId[] Other = { ItemId.Ardent_Censer, ItemId.Forbidden_Idol, ItemId.Aether_Wisp, ItemId.Ionian_Boots_of_Lucidity, ItemId.Spirit_Visage, ItemId.Kindlegem, ItemId.Spectres_Cowl, ItemId.Rylais_Crystal_Scepter, ItemId.Giants_Belt, ItemId.Needlessly_Large_Rod, ItemId.Warmogs_Armor, ItemId.Crystalline_Bracer, ItemId.Mikaels_Crucible, ItemId.Chalice_of_Harmony };
+        static readonly ItemId[] SRShopList = { ItemId.Zhonyas_Hourglass, ItemId.Rabadons_Deathcap, ItemId.Morellonomicon, ItemId.Athenes_Unholy_Grail, ItemId.Rylais_Crystal_Scepter, ItemId.Mikaels_Crucible, ItemId.Frost_Queens_Claim, ItemId.Liandrys_Torment, ItemId.Lich_Bane, ItemId.Locket_of_the_Iron_Solari, ItemId.Rod_of_Ages, ItemId.Void_Staff, ItemId.Hextech_Gunblade, ItemId.Sorcerers_Shoes };
+        static readonly ItemId[] TTShopList = { ItemId.Wooglets_Witchcap, ItemId.Rod_of_Ages, ItemId.Rylais_Crystal_Scepter, ItemId.Lich_Bane, ItemId.Liandrys_Torment, ItemId.Morellonomicon, ItemId.Locket_of_the_Iron_Solari, ItemId.Void_Staff, ItemId.Sorcerers_Shoes };
+        static readonly ItemId[] ARAMShopListAP = { ItemId.Zhonyas_Hourglass, ItemId.Rabadons_Deathcap, ItemId.Rod_of_Ages, ItemId.Rylais_Crystal_Scepter, ItemId.Will_of_the_Ancients, ItemId.Zekes_Herald, ItemId.Locket_of_the_Iron_Solari, ItemId.Void_Staff, ItemId.Hextech_Sweeper, ItemId.Iceborn_Gauntlet, ItemId.Abyssal_Scepter, ItemId.Sorcerers_Shoes };
+        static readonly ItemId[] ARAMShopListAD = { ItemId.Blade_of_the_Ruined_King, ItemId.Infinity_Edge, ItemId.Phantom_Dancer, ItemId.Sanguine_Blade, ItemId.Mercurial_Scimitar, ItemId.Zephyr, ItemId.Maw_of_Malmortius, ItemId.Statikk_Shiv, ItemId.Berserkers_Greaves };
+        static readonly ItemId[] CrystalScar = { ItemId.Rod_of_Ages_Crystal_Scar, ItemId.Wooglets_Witchcap, ItemId.Void_Staff, ItemId.Athenes_Unholy_Grail, ItemId.Abyssal_Scepter, ItemId.Liandrys_Torment, ItemId.Morellonomicon, ItemId.Rylais_Crystal_Scepter, ItemId.Sorcerers_Shoes };
+        static readonly ItemId[] Other = { };
         static int LastShopAttempt;
 
         public static void DoChecks()
@@ -60,22 +59,22 @@ namespace Support
             if (Autoplay.Bot.InFountain())
             {
                 if (Autoplay.Bot.InFountain() && (Autoplay.Bot.Gold == 475 || Autoplay.Bot.Gold == 515)) //validates on SR untill 1:55 game time
-                {
-                    int startingItem = Autoplay.Rand.Next(-6, 7);
-                    if (startingItem < 0)
                     {
-                        Autoplay.Bot.BuyItem(ItemId.Spellthiefs_Edge);
+                        int startingItem = Autoplay.Rand.Next(-6, 7);
+                        if (startingItem < 0)
+                        {
+                            Autoplay.Bot.BuyItem(ItemId.Spellthiefs_Edge);
+                        }
+                        if (startingItem == 0)
+                        {
+                            Autoplay.Bot.BuyItem(ItemId.Dorans_Ring);
+                        }
+                        if (startingItem > 0)
+                        {
+                            Autoplay.Bot.BuyItem(ItemId.Ancient_Coin);
+                        }
+                        Autoplay.Bot.BuyItem(ItemId.Warding_Totem_Trinket);
                     }
-                    if (startingItem == 0)
-                    {
-                        Autoplay.Bot.BuyItem(ItemId.Dorans_Ring);
-                    }
-                    if (startingItem > 0)
-                    {
-                        Autoplay.Bot.BuyItem(ItemId.Ancient_Coin);
-                    }
-                    Autoplay.Bot.BuyItem(ItemId.Warding_Totem_Trinket);
-                }
                 if (File.Exists(FileHandler._theFile) && (FileHandler.CustomShopList != null))
                 {
                     foreach (var item in FileHandler.CustomShopList)
@@ -169,7 +168,7 @@ namespace Support
             AllyHeroes = AllyHeroes.OrderBy(hero => hero.Distance(Autoplay.Bot)).ToList();
             EnemyHeroes = EnemyHeroes.OrderBy(hero => hero.Distance(Autoplay.Bot)).ToList();
 
-
+         
             //Turrets
             AllTurrets = ObjectManager.Get<Obj_AI_Turret>().ToList();
             AllyTurrets = AllTurrets.FindAll(turret => turret.IsAlly).ToList();
@@ -223,5 +222,5 @@ namespace Support
             }
         }
     }
-
-}
+       
+    }
