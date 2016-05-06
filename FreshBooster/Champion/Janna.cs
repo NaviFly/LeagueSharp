@@ -60,6 +60,7 @@ namespace FreshBooster.Champion
                 {
                     Misc.AddItem(new MenuItem("Janna_Flee", "Flee Key").SetValue(new KeyBind('G', KeyBindType.Press)));
                     Misc.AddItem(new MenuItem("Janna_AutoE", "Auto E").SetValue(true));
+                    Misc.AddItem(new MenuItem("Janna_AutoE1", "Auto E(Not use me)").SetValue(true));
                     Misc.SubMenu("Auto R").AddItem(new MenuItem("Janna_AutoRHP", "Min HP %").SetValue(new Slider(10, 0, 100)));
                     Misc.SubMenu("Auto R").AddItem(new MenuItem("Janna_AutoREnable", "Enable").SetValue(true));
                     Misc.SubMenu("Interrupt").AddItem(new MenuItem("Janna_InterQ", "Use Q").SetValue(true));
@@ -282,6 +283,7 @@ namespace FreshBooster.Champion
                         var EndPos = args.End;
                         var NonTRange = new Geometry.Polygon.Rectangle(StartPos, EndPos, sender.BoundingRadius + 30);
                         var Target = HeroManager.Allies.FirstOrDefault(f => f.Position.Distance(Player.Position) <= _E.Range && NonTRange.IsInside(f.Position));
+                        if (Target == Player && _MainMenu.Item("Janna_AutoE1").GetValue<bool>()) return;
                         if (Target != null)
                         {
                             _E.CastOnUnit(Target, true);
