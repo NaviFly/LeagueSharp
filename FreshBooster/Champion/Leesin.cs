@@ -129,7 +129,7 @@ namespace FreshBooster.Champion
                 if (_MainMenu.Item("LeeSin_Draw_E").GetValue<bool>())
                     Render.Circle.DrawCircle(Player.Position, _E.Range, Color.White, 1);
                 if (_MainMenu.Item("LeeSin_Draw_Ward").GetValue<bool>())
-                    Render.Circle.DrawCircle(Player.Position, 575, Color.White, 1);
+                    Render.Circle.DrawCircle(Player.Position, 625, Color.White, 1);
                 //if (TargetSelector.GetSelectedTarget() != null) Render.Circle.DrawCircle(TargetSelector.GetSelectedTarget().Position, 375, Color.Green, 2);                
                 if (_MainMenu.Item("LeeSin_InsecKick").GetValue<KeyBind>().Active && TargetSelector.GetSelectedTarget() != null && _MainMenu.Item("LeeSin_PredictR").GetValue<bool>())
                 {
@@ -143,13 +143,13 @@ namespace FreshBooster.Champion
                     if (AllyChampion != null)
                     { var InsecPOS = InsecST.Extend(InsecED, +InsecED.Distance(InsecST) + 230); }
                     Render.Circle.DrawCircle(InsecPOS, 50, Color.Gold);
-                    if (GetTarget.Distance(Player.Position) < 575)
+                    if (GetTarget.Distance(Player.Position) < 625)
                     {
-                        Render.Circle.DrawCircle(Player.Position, 475, Color.LightGreen);
+                        Render.Circle.DrawCircle(Player.Position, 525, Color.LightGreen);
                     }
                     else
                     {
-                        Render.Circle.DrawCircle(Player.Position, 475, Color.IndianRed);
+                        Render.Circle.DrawCircle(Player.Position, 525, Color.IndianRed);
                     }
                     Drawing.DrawLine(Drawing.WorldToScreen(InsecST)[0], Drawing.WorldToScreen(InsecST)[1], Drawing.WorldToScreen(InsecED)[0], Drawing.WorldToScreen(InsecED)[1], 2, Color.Green);
                 }
@@ -408,7 +408,7 @@ namespace FreshBooster.Champion
                         _R.Cast(GetTarget, true);
                         return;
                     }
-                    if (InsecPOS.Distance(Player.Position) < 575 && _R.Level > 0 && _R.IsReady() && InsecType != "RF")
+                    if (InsecPOS.Distance(Player.Position) < 625 && _R.Level > 0 && _R.IsReady() && InsecType != "RF")
                     {
                         InsecText = "Ward";
                         if (InsecType == "Wait" && InsecType != "WF" && InsecType != "WF1" && _W.IsReady())
@@ -446,7 +446,7 @@ namespace FreshBooster.Champion
                         return;
                     }
 
-                    // 플 425, 와드 575
+                    // 플 425, 와드 625
                 }
                 if (_MainMenu.Item("LeeSin_Ward_W").GetValue<KeyBind>().Active)   // 와드 방호
                 {
@@ -497,7 +497,7 @@ namespace FreshBooster.Champion
                                 }
                             }
                         }
-                        if (Player.Distance(Cursor) > 575) Cursor = Game.CursorPos.Extend(Player.Position, +Player.Distance(Game.CursorPos) - 575);
+                        if (Player.Distance(Cursor) > 625) Cursor = Game.CursorPos.Extend(Player.Position, +Player.Distance(Game.CursorPos) - 625);
                         //Render.Circle.DrawCircle(Cursor, 50, Color.Black, 2);                            
                         if (WW && Ward != null && Ward_Time < Environment.TickCount)
                         {
