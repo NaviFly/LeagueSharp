@@ -151,13 +151,13 @@ namespace FreshBooster.Champion
                 if (_MainMenu.Item("Leblanc_REnable").GetValue<bool>())
                 {
                     string Status_R = string.Empty;
-                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancChaosOrbM")
+                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancchaosorbm")
                         Status_R = "_Q";
-                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSlideM")
+                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancslidem")
                         Status_R = "_W";
-                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name == "leblancslidereturnm")
+                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancslidereturnm")
                         Status_R = "_W (Return)";
-                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSoulShackleM")
+                    if (Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancsoulshacklem")
                         Status_R = "_E";
                     Drawing.DrawText(Player.HPBarPosition.X + 30, Player.HPBarPosition.Y - 40, Color.IndianRed, "R: " + Status_R);
                 }
@@ -273,9 +273,9 @@ namespace FreshBooster.Champion
                 if (_MainMenu.Item("Leblanc_Flee").GetValue<KeyBind>().Active)
                 {
                     Player.IssueOrder(GameObjectOrder.MoveTo, Game.CursorPos);  // 커서방향 이동
-                    if (_W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlide")
+                    if (_W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.W).Name.ToLower() == "leblancslide")
                         _W.Cast(Game.CursorPos, true);
-                    if (_R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSlideM")
+                    if (_R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancslidem")
                         _R.Cast(Game.CursorPos, true);
                 }
 
@@ -287,7 +287,7 @@ namespace FreshBooster.Champion
                     {
                         _E.CastIfHitchanceEquals(ETarget, HitChance.Low, true);
                     }
-                    else if (ETarget != null && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSoulShackleM" && Environment.TickCount > ERTIME)
+                    else if (ETarget != null && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancsoulshacklem" && Environment.TickCount > ERTIME)
                     {
                         _R.CastIfHitchanceEquals(ETarget, HitChance.Low, true);
                     }
@@ -320,7 +320,7 @@ namespace FreshBooster.Champion
                         return;
                     }
                 }
-                if (_MainMenu.Item("Leblanc_KUse_W").GetValue<bool>() && _W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlide")
+                if (_MainMenu.Item("Leblanc_KUse_W").GetValue<bool>() && _W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.W).Name.ToLower() == "leblancslide")
                 {
                     var WTarget = TargetSelector.GetTarget(_W.Range, TargetSelector.DamageType.Magical);
                     if (WTarget == null) return;
@@ -340,7 +340,7 @@ namespace FreshBooster.Champion
                         return;
                     }
                 }
-                if (_MainMenu.Item("Leblanc_KUse_Q2").GetValue<bool>() && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancChaosOrbM")
+                if (_MainMenu.Item("Leblanc_KUse_Q2").GetValue<bool>() && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancchaosorbm")
                 {
                     var QTarget = TargetSelector.GetTarget(_Q.Range, TargetSelector.DamageType.Magical);
                     if (QTarget == null) return;
@@ -350,7 +350,7 @@ namespace FreshBooster.Champion
                         return;
                     }
                 }
-                if (_MainMenu.Item("Leblanc_KUse_W2").GetValue<bool>() && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSlideM")
+                if (_MainMenu.Item("Leblanc_KUse_W2").GetValue<bool>() && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancslidem")
                 {
                     var QTarget = TargetSelector.GetTarget(_W.Range, TargetSelector.DamageType.Magical);
                     if (QTarget == null) return;
@@ -360,7 +360,7 @@ namespace FreshBooster.Champion
                         return;
                     }
                 }
-                if (_MainMenu.Item("Leblanc_KUse_E2").GetValue<bool>() && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSoulShackleM")
+                if (_MainMenu.Item("Leblanc_KUse_E2").GetValue<bool>() && _R.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancsoulshacklem")
                 {
                     var QTarget = TargetSelector.GetTarget(_E.Range, TargetSelector.DamageType.Magical);
                     if (QTarget == null) return;
@@ -382,7 +382,7 @@ namespace FreshBooster.Champion
                     // Q
                     if (QTarget != null
                             && _MainMenu.Item("Leblanc_CUse_Q").GetValue<bool>() && _Q.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.Q).Name == "LeblancChaosOrb"
+                            && Player.Spellbook.GetSpell(SpellSlot.Q).Name.ToLower() == "leblancchaosorb"
                             )
                     {
                         ReturnTime = TickCount(1000);
@@ -395,7 +395,7 @@ namespace FreshBooster.Champion
                         // W
                         if (WTarget != null
                                 && _MainMenu.Item("Leblanc_CUse_W").GetValue<bool>() && _W.IsReady()
-                                && Player.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlide"
+                                && Player.Spellbook.GetSpell(SpellSlot.W).Name.ToLower() == "leblancslide"
                                 )
                         {
                             _W.Cast(WTarget.ServerPosition, true);
@@ -405,7 +405,7 @@ namespace FreshBooster.Champion
                         // W2
                         if (WTarget != null
                                 && _MainMenu.Item("Leblanc_CUse_W2").GetValue<bool>() && _R.IsReady()
-                                && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSlideM")
+                                && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancslidem")
                         {
                             _R.Cast(WTarget.ServerPosition, true);
                             return;
@@ -415,7 +415,7 @@ namespace FreshBooster.Champion
                     // Q2
                     if (QTarget != null
                             && _MainMenu.Item("Leblanc_CUse_Q2").GetValue<bool>() && _R.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancChaosOrbM"
+                            && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancchaosorbm"
                             )
                     {
                         _R.Cast(QTarget, true);
@@ -424,7 +424,7 @@ namespace FreshBooster.Champion
                     // W
                     if (WTarget != null
                             && _MainMenu.Item("Leblanc_CUse_W").GetValue<bool>() && _W.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlide"
+                            && Player.Spellbook.GetSpell(SpellSlot.W).Name.ToLower() == "leblancslide"
                             )
                     {
                         _W.Cast(WTarget.ServerPosition, true);
@@ -434,7 +434,7 @@ namespace FreshBooster.Champion
                     // W2
                     if (WTarget != null
                             && _MainMenu.Item("Leblanc_CUse_W2").GetValue<bool>() && _R.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancSlideM")
+                            && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancslidem")
                     {
                         _R.Cast(WTarget.ServerPosition, true);
                         return;
@@ -443,7 +443,7 @@ namespace FreshBooster.Champion
                     // E
                     if (ETarget != null
                             && _MainMenu.Item("Leblanc_CUse_E").GetValue<bool>() && _E.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.E).Name == "LeblancSoulShackle" && Player.Spellbook.GetSpell(SpellSlot.R).Name != "LeblancSlideM"
+                            && Player.Spellbook.GetSpell(SpellSlot.E).Name.ToLower() == "leblancsoulshackle" && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() != "leblancslidem"
                             )
                     {
                         _E.CastIfHitchanceEquals(ETarget, Hitchance("Leblanc_CUseE_Hit"), true);
@@ -453,7 +453,7 @@ namespace FreshBooster.Champion
                     // E2
                     if (ETarget != null
                             && _MainMenu.Item("CUse_E2").GetValue<bool>() && _E.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.E).Name == "LeblancSoulShackleM"
+                            && Player.Spellbook.GetSpell(SpellSlot.E).Name.ToLower() == "leblancsoulshacklem"
                             )
                     {
                         _R.CastIfHitchanceEquals(ETarget, Hitchance("Leblanc_CUseE_Hit"), true);
@@ -461,18 +461,18 @@ namespace FreshBooster.Champion
                     }
 
                     // WReturn
-                    if (ETarget.Buffs.Find(buff => (buff.Name == "LeblancSoulShackle" || buff.Name == "LeblancSoulShackleM") && buff.IsValidBuff()) == null
+                    if (ETarget.Buffs.Find(buff => (buff.Name.ToLower() == "leblancsoulshackle" || buff.Name.ToLower() == "leblancsoulshacklem") && buff.IsValidBuff()) == null
                         && _MainMenu.Item("Leblanc_CUse_WReturn").GetValue<bool>()
-                        && _W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.W).Name == "leblancslidereturn" && !_Q.IsReady() && !_R.IsReady() && ReturnTime < Environment.TickCount)
+                        && _W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.W).Name.ToLower() == "leblancslidereturn" && !_Q.IsReady() && !_R.IsReady() && ReturnTime < Environment.TickCount)
                     {
                         _W.Cast(true);
                         return;
                     }
 
                     // WR Return
-                    if (ETarget.Buffs.Find(buff => (buff.Name == "LeblancSoulShackle" || buff.Name == "LeblancSoulShackleM") && buff.IsValidBuff()) == null
+                    if (ETarget.Buffs.Find(buff => (buff.Name.ToLower() == "leblancsoulshackle" || buff.Name.ToLower() == "leblancsoulshacklem") && buff.IsValidBuff()) == null
                         && _MainMenu.Item("Leblanc_CUse_W2Return").GetValue<bool>()
-                        && _W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name == "leblancslidereturnm" && !_Q.IsReady() && !_W.IsReady() && ReturnTime < Environment.TickCount)
+                        && _W.IsReady() && Player.Spellbook.GetSpell(SpellSlot.R).Name.ToLower() == "leblancslidereturnm" && !_Q.IsReady() && !_W.IsReady() && ReturnTime < Environment.TickCount)
                     {
                         _R.Cast(true);
                         return;
@@ -489,7 +489,7 @@ namespace FreshBooster.Champion
                     // Q
                     if (QTarget != null
                             && _MainMenu.Item("Leblanc_AUse_Q").GetValue<bool>() && _Q.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.Q).Name == "LeblancChaosOrb"
+                            && Player.Spellbook.GetSpell(SpellSlot.Q).Name.ToLower() == "leblancchaosorb"
                             )
                     {
                         _Q.Cast(QTarget, true);
@@ -499,7 +499,7 @@ namespace FreshBooster.Champion
                     // W
                     if (WTarget != null
                             && _MainMenu.Item("Leblanc_AUse_W").GetValue<bool>() && _W.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlide"
+                            && Player.Spellbook.GetSpell(SpellSlot.W).Name.ToLower() == "leblancslide"
                             )
                     {
                         _W.Cast(WTarget.ServerPosition, true);
@@ -509,7 +509,7 @@ namespace FreshBooster.Champion
                     // E
                     if (ETarget != null
                             && _MainMenu.Item("Leblanc_AUse_E").GetValue<bool>() && _E.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.E).Name == "LeblancSoulShackle"
+                            && Player.Spellbook.GetSpell(SpellSlot.E).Name.ToLower() == "leblancsoulshackle"
                             )
                     {
                         _E.CastIfHitchanceEquals(ETarget, Hitchance("Leblanc_CUseE_Hit"), true);
@@ -519,7 +519,7 @@ namespace FreshBooster.Champion
                     // WW
                     if (WTarget != null
                             && _MainMenu.Item("Leblanc_AUse_W").GetValue<bool>() && _W.IsReady()
-                            && Player.Spellbook.GetSpell(SpellSlot.W).Name == "leblancslidereturn"
+                            && Player.Spellbook.GetSpell(SpellSlot.W).Name.ToLower() == "leblancslidereturn"
                             )
                     {
                         _W.Cast(true);
@@ -558,17 +558,17 @@ namespace FreshBooster.Champion
             {
                 if (sender.IsMe)
                 {
-                    if (args.SData.Name == "LeblancSlide")
+                    if (args.SData.Name.ToLower() == "leblancslide")
                         WTime = TickCount(4000);
-                    if (args.SData.Name == "LeblancSlideM")
+                    if (args.SData.Name.ToLower() == "leblancslideM")
                         RTime = TickCount(4000);
                     if (_MainMenu.Item("Leblanc_ERCC").GetValue<KeyBind>().Active)
                     {
-                        if (ERCC == 0 && args.SData.Name == "LeblancSoulShackle")
+                        if (ERCC == 0 && args.SData.Name.ToLower() == "leblancsoulshackle")
                         {
                             ERTIME = TickCount(2000);
                         }
-                        if (ERCC == 1 && args.SData.Name == "LeblancSoulShackleM")
+                        if (ERCC == 1 && args.SData.Name.ToLower() == "leblancsoulshacklem")
                         {
                             ERTIME = TickCount(2000);
                         }
