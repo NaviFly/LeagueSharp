@@ -482,7 +482,6 @@ namespace FreshBooster.Champion
                 if ((_MainMenu.Item("HKey").GetValue<KeyBind>().Active || _MainMenu.Item("Leblanc_AHToggle").GetValue<bool>())
                     && _MainMenu.Item("Leblanc_AManarate").GetValue<Slider>().Value < Player.ManaPercent) // Harass
                 {
-
                     var QTarget = TargetSelector.GetTarget(_Q.Range, TargetSelector.DamageType.Magical);
                     var WTarget = TargetSelector.GetTarget(_W.Range, TargetSelector.DamageType.Magical);
                     var ETarget = TargetSelector.GetTarget(_E.Range, TargetSelector.DamageType.Magical);
