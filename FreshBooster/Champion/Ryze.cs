@@ -15,7 +15,7 @@ namespace FreshBooster.Champion
         public const string ChampName = "Ryze";
         public static Obj_AI_Hero Player;
         public static Spell _Q, _W, _E, _R;
-        public static HpBarIndicator Indicator = new HpBarIndicator();
+        public static HpBarIndicator Indicator = new HpBarIndicator(); 
         // Default Setting
 
         public static BuffInstance RyzePassive, Ryzepassivecharged;
