@@ -27,11 +27,11 @@ namespace FreshBooster.Champion
         {
             try
             {
-                _Q = new Spell(SpellSlot.Q, 900);
+                _Q = new Spell(SpellSlot.Q, 1000);
                 _Q.SetSkillshot(0.25f, 50f, 1700, true, SkillshotType.SkillshotLine);
                 _W = new Spell(SpellSlot.W, 620);
                 _E = new Spell(SpellSlot.E, 620);
-                _R = new Spell(SpellSlot.R);
+                _R = new Spell(SpellSlot.R, 1550);
             }
             catch (Exception)
             {
@@ -113,6 +113,8 @@ namespace FreshBooster.Champion
                     Draw.AddItem(new MenuItem("Ryze_QRange", "Q Range").SetValue(false));
                     Draw.AddItem(new MenuItem("Ryze_WRange", "W Range").SetValue(false));
                     Draw.AddItem(new MenuItem("Ryze_ERange", "E Range").SetValue(false));
+                    Draw.AddItem(new MenuItem("Ryze_RRange", "R Range").SetValue(false));
+                    Draw.AddItem(new MenuItem("Ryze_R1Range", "R Range in minimap").SetValue(false));
                     Draw.AddItem(new MenuItem("Ryze_DisplayStack", "Display Stack").SetValue(true));
                     Draw.AddItem(new MenuItem("Ryze_DisplayTime", "Display Time").SetValue(true));
                     Draw.AddItem(new MenuItem("Ryze_AutoStackText", "Auto Stack Enable").SetValue(true));
@@ -140,6 +142,10 @@ namespace FreshBooster.Champion
                     Render.Circle.DrawCircle(Player.Position, _W.Range, Color.White, 1);
                 if (_MainMenu.Item("Ryze_ERange").GetValue<bool>())
                     Render.Circle.DrawCircle(Player.Position, _E.Range, Color.White, 1);
+                if (_MainMenu.Item("Ryze_RRange").GetValue<bool>())
+                    Render.Circle.DrawCircle(Player.Position, _R.Range, Color.White, 1);
+                if (_MainMenu.Item("Ryze_R1Range").GetValue<bool>())
+                    Utility.DrawCircle(Player.Position, _R.Range, Color.White, 1, 23, true);
 
                 var PlayerPosition = ObjectManager.Player.Position;
                 var PlayerPosition2 = Drawing.WorldToScreen(PlayerPosition);
