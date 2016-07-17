@@ -51,7 +51,7 @@ namespace FreshBooster.Champion
                     Combo.AddItem(new MenuItem("Ryze_CUse_Q", "Use Q").SetValue(true));
                     Combo.AddItem(new MenuItem("Ryze_CUse_W", "Use W").SetValue(true));
                     Combo.AddItem(new MenuItem("Ryze_CUse_E", "Use E").SetValue(true));
-                    Combo.AddItem(new MenuItem("Ryze_CUse_R", "Use R").SetValue(true));
+                    //Combo.AddItem(new MenuItem("Ryze_CUse_R", "Use R").SetValue(true));
                     Combo.AddItem(new MenuItem("CKey", "Combo Key").SetValue(new KeyBind(32, KeyBindType.Press)));
                 }
                 _MainMenu.AddSubMenu(Combo);
@@ -282,10 +282,10 @@ namespace FreshBooster.Champion
                 {
                     if (SpeedTime > Environment.TickCount)
                         return;
-                    if (_MainMenu.Item("Ryze_CUse_R").GetValue<bool>() && _R.IsReady() && WTarget != null
-                        && ((_Q.IsReady() || _W.IsReady() || _E.IsReady()) && RyzeStack > 2)
-                        || RyzeStack == 4 || Ryzepassivecharged != null)
-                        _R.Cast(true);
+                    //if (_MainMenu.Item("Ryze_CUse_R").GetValue<bool>() && _R.IsReady() && WTarget != null
+                    //    && ((_Q.IsReady() || _W.IsReady() || _E.IsReady()) && RyzeStack > 2)
+                    //    || RyzeStack == 4 || Ryzepassivecharged != null)
+                    //    _R.Cast(true);
                     if (_MainMenu.Item("Ryze_CUse_W").GetValue<bool>() && _W.IsReady() && WTarget != null)
                         _W.CastOnUnit(WTarget, true);
                     if (_MainMenu.Item("Ryze_CUse_Q").GetValue<bool>() && _Q.IsReady() && WTarget != null && _W.IsReady())
