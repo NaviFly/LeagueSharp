@@ -286,14 +286,14 @@ namespace FreshBooster.Champion
                     //    && ((_Q.IsReady() || _W.IsReady() || _E.IsReady()) && RyzeStack > 2)
                     //    || RyzeStack == 4 || Ryzepassivecharged != null)
                     //    _R.Cast(true);
+                    if (_MainMenu.Item("Ryze_CUse_E").GetValue<bool>() && _E.IsReady() && ETarget != null)
+                        _E.CastOnUnit(ETarget, true);
                     if (_MainMenu.Item("Ryze_CUse_W").GetValue<bool>() && _W.IsReady() && WTarget != null)
                         _W.CastOnUnit(WTarget, true);
                     if (_MainMenu.Item("Ryze_CUse_Q").GetValue<bool>() && _Q.IsReady() && WTarget != null && _W.IsReady())
                         _Q.Cast(WTarget, true);
                     if (_MainMenu.Item("Ryze_CUse_Q").GetValue<bool>() && _Q.IsReady() && QTarget != null && !_W.IsReady())
-                        _Q.Cast(QTarget, true);
-                    if (_MainMenu.Item("Ryze_CUse_E").GetValue<bool>() && _E.IsReady() && ETarget != null)
-                        _E.CastOnUnit(ETarget, true);
+                        _Q.Cast(QTarget, true);                    
                 }
 
                 if ((_MainMenu.Item("HKey").GetValue<KeyBind>().Active || _MainMenu.Item("Ryze_HToggle").GetValue<bool>())
